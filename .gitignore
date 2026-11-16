@@ -1,0 +1,22 @@
+# Build Artifacts
+*.zip
+
+# Screenshots & Media (Privacy Protection)
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.gif
+/docs/
+screenshots/
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+/data/
+/wechat_auto_answer/
+
+# OS artifacts
+.DS_Store
+Thumbs.db

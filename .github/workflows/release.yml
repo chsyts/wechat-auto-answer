@@ -1,0 +1,40 @@
+name: Build Magisk Module Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Magisk Module Zip
+        run: |
+          zip -r9 WeChat_AutoAnswer_Magisk.zip \
+            module.prop \
+            customize.sh \
+            service.sh \
+            answer_once.sh \
+            README.md \
+            LICENSE
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WeChat_AutoAnswer_Magisk
+          path: WeChat_AutoAnswer_Magisk.zip
+
+      - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: WeChat_AutoAnswer_Magisk.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
