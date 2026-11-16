@@ -7,6 +7,12 @@
   <img src="https://img.shields.io/badge/License-GPL--3.0-lightgrey.svg" alt="License">
 </p>
 
+> [!IMPORTANT]
+> ### ⚠️ 使用前必读（硬性前提条件）
+> - **手机必须具备 ROOT 权限**：已解锁 Bootloader 并安装了 **Magisk**（面具）、**KernelSU** 或 **APatch** 环境。
+> - **安装方式**：下载 Release 中的 **`WeChat_AutoAnswer_Magisk.zip`** 模块包，在 **Magisk 管理器 ->「模块」->「从本地安装」** 刷入并**重启手机**生效。
+> - **不支持普通未 Root 手机**：由于需要穿透定制系统底层音频流及调用无障碍点击，未 Root 的普通手机无法直接使用本模块！
+
 专为**老年人、行动不便长辈及无障碍辅助场景**设计的 Android 微信电话自动化接听模块。
 
 通过底层的 Linux Shell 脚本与系统级硬件事件调度，实现：**微信来电响铃达到指定秒数未接时，全自动点亮屏幕并点击接听**。无需安装额外第三方 App、不常驻重度服务、不耗电、不修改微信安装包、绝无封号风险。
